@@ -1,17 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes, BrowserRouter} from "react-router-dom";
+import Home from './pages/home';
+import Posts from './pages/posts';
+import Submit from './pages/submit';
+import User_profile from './pages/user_profile';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <h1>
-          Welcome to the model railroading app!
-        </h1>
-        
-      </header>
-    </div>
+    
+
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path={"/"} element={<Home/>} />
+          <Route path={"/posts"} element={<Posts/>}/>
+          <Route path={"/submit"} element={<Submit/>} />
+          <Route path={"/user_profile"} element={<User_profile/>}/>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
